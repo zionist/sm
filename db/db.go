@@ -5,15 +5,6 @@ import (
     _ "github.com/lib/pq"
 )
 
-const (
-    DB_USER     = "vcc"
-    DB_PASSWORD = "vcc"
-    DB_NAME     = "vcc"
-    DB_HOST     = "localhost"
-    RUNS        = 100
-)
-
-
 func Test(done chan int, db *sql.DB) {
 	for i:=0; i<10; i++ {
 	    rows, err := db.Query("SELECT * FROM ac_role")
